@@ -9,14 +9,25 @@ if ! [[ -e jq ]] ; then
 fi
 chmod +x jq
 
-BLUE=$'\e[1;34m'
-RED=$'\e[1;31m'
-GREEN=$'\e[1;32m'
-CYAN=$'\e[1;36m'
-WHITE=$'\e[1;37m'
-MAGENTA=$'\e[1;35m'
-YELLOW=$'\e[1;33m'
-NO_COLOR=$'\e[0m'
+if test -t 1 ; then 
+  BLUE=$'\e[1;34m'
+  RED=$'\e[1;31m'
+  GREEN=$'\e[1;32m'
+  CYAN=$'\e[1;36m'
+  WHITE=$'\e[1;37m'
+  MAGENTA=$'\e[1;35m'
+  YELLOW=$'\e[1;33m'
+  NO_COLOR=$'\e[0m'
+else
+  BLUE=
+  RED=
+  GREEN=
+  CYAN=
+  WHITE=
+  MAGENTA=
+  YELLOW=
+  NO_COLOR=
+fi
 
 d=0
 s=0
